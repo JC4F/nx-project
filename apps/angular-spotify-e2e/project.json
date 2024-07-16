@@ -1,0 +1,9 @@
+{
+  "name": "angular-spotify-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/angular-spotify-e2e/src",
+  "implicitDependencies": ["angular-spotify"],
+  "// targets": "to see all targets run: nx show project angular-spotify-e2e --web",
+  "targets": {}
+}
