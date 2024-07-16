@@ -5,8 +5,6 @@ on:
     branches:
       - main
   pull_request:
-    branches:
-      - main
 
 permissions:
   actions: read
@@ -34,6 +32,6 @@ jobs:
       - uses: nrwl/nx-set-shas@v4
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
-      - run: npx nx-cloud record -- echo Hello World
+      # - run: npx nx-cloud record -- echo Hello World
       - run: npx nx affected -t lint test build
       - run: npx nx affected --parallel 1 -t e2e-ci
