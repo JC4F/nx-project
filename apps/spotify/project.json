@@ -1,28 +1,28 @@
 {
-  "name": "angular-spotify",
+  "name": "spotify",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/angular-spotify/src",
+  "sourceRoot": "apps/spotify/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/angular-spotify",
-        "index": "apps/angular-spotify/src/index.html",
-        "browser": "apps/angular-spotify/src/main.ts",
+        "outputPath": "dist/apps/spotify",
+        "index": "apps/spotify/src/index.html",
+        "browser": "apps/spotify/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/angular-spotify/tsconfig.app.json",
+        "tsConfig": "apps/spotify/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/angular-spotify/public"
+            "input": "apps/spotify/public"
           }
         ],
-        "styles": ["apps/angular-spotify/src/styles.scss"],
+        "styles": ["apps/spotify/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -53,10 +53,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "angular-spotify:build:production"
+          "buildTarget": "spotify:build:production"
         },
         "development": {
-          "buildTarget": "angular-spotify:build:development"
+          "buildTarget": "spotify:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -64,7 +64,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "angular-spotify:build"
+        "buildTarget": "spotify:build"
       }
     },
     "lint": {
@@ -74,7 +74,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/angular-spotify/jest.config.ts"
+        "jestConfig": "apps/spotify/jest.config.ts"
       }
     }
   }
