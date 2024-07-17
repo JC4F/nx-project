@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky",
-    "build-types": "tsc --noEmit --pretty"
+    "build-check": "nx run-many -t build"
   },
   "private": true,
   "dependencies": {
