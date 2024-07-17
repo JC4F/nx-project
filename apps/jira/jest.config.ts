@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'angular-spotify',
+  displayName: 'jira',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/angular-spotify',
+  coverageDirectory: '../../coverage/apps/jira',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
