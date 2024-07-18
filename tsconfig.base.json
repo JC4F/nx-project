@@ -28,6 +28,9 @@
       "@jc4f-nx/spotify-shared-assets": [
         "libs/spotify/shared/assets/src/index.ts"
       ],
+      "@jc4f-nx/spotify-shared-click-stop-propagation": [
+        "libs/spotify/shared/directives/click-stop-propagation/src/index.ts"
+      ],
       "@jc4f-nx/spotify-shared-data-access-models": [
         "libs/spotify/shared/data-access/models/src/index.ts"
       ],
@@ -36,6 +39,9 @@
       ],
       "@jc4f-nx/spotify-shared-data-access-store": [
         "libs/spotify/shared/data-access/store/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shared-data-size-observer": [
+        "libs/spotify/shared/directives/data-size-observer/src/index.ts"
       ],
       "@spartan-ng/ui-button-helm": [
         "libs/shared/ui/spartans/ui-button-helm/src/index.ts"

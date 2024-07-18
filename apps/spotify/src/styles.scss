@@ -1,1 +1,18 @@
 @import '../../../styles.scss';
+@use './custom/tailwind';
+@use './custom/view-transitions';
+
+body {
+  min-width: 600px;
+  line-height: normal;
+  font-size: 16px;
+  letter-spacing: 0.015em;
+  @apply h-full w-full absolute overflow-hidden flex flex-col bg-black text-white/70;
+}
+
+a,
+button {
+  &:focus-visible {
+    @apply outline outline-2 outline-white outline-offset-2;
+  }
+}
