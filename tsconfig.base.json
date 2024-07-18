@@ -16,11 +16,11 @@
     "baseUrl": ".",
     "paths": {
       "@jc4f-nx/others": ["libs/shared/ui/others/src/index.ts"],
-      "@jc4f-nx/shared-spotify-app-config": [
-        "libs/spotify/shared/app-config/src/index.ts"
-      ],
       "@jc4f-nx/spotify-home-data-access": [
         "libs/spotify/home/data-access/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shared-app-config": [
+        "libs/spotify/shared/app-config/src/index.ts"
       ],
       "@jc4f-nx/spotify-shared-app-init": [
         "libs/spotify/shared/app-init/src/index.ts"
@@ -42,6 +42,12 @@
       ],
       "@jc4f-nx/spotify-shared-data-size-observer": [
         "libs/spotify/shared/directives/data-size-observer/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shared-pipes-duration-pipe": [
+        "libs/spotify/shared/pipes/duration-pipe/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shared-utils": [
+        "libs/spotify/shared/utils/src/index.ts"
       ],
       "@spartan-ng/ui-button-helm": [
         "libs/shared/ui/spartans/ui-button-helm/src/index.ts"

@@ -1,23 +1,15 @@
 /// <reference types="spotify-web-playback-sdk" />
-
-import { TrackApiService } from '@angular-spotify/web/shared/data-access/spotify-api';
-import { RouteUtil, StringUtil } from '@angular-spotify/web/shared/utils';
-import { Injectable } from '@angular/core';
 import {
   GenericState,
   SpotifyApiAudioAnalysisResponse,
-  SpotifyTrackExtended,
-} from '@jc4f-nx/spotify-shared-data-access-models';
+  SpotifyTrackExtended
+} from '@angular-spotify/web/shared/data-access/models';
+import { TrackApiService } from '@angular-spotify/web/shared/data-access/spotify-api';
+import { RouteUtil, StringUtil } from '@angular-spotify/web/shared/utils';
+import { Injectable } from '@angular/core';
 import { ComponentStore } from '@ngrx/component-store';
 import { EMPTY, Observable } from 'rxjs';
-import {
-  catchError,
-  filter,
-  map,
-  switchMap,
-  tap,
-  withLatestFrom,
-} from 'rxjs/operators';
+import { catchError, filter, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 
 interface PlaybackState extends GenericState<Spotify.PlaybackState> {
   player: Spotify.Player;
@@ -35,42 +27,39 @@ export class PlaybackStore extends ComponentStore<PlaybackState> {
   ) as Observable<Spotify.PlaybackState>;
 
   readonly context$ = this.playback$.pipe(map((data) => data.context));
-  readonly currentTrack$: Observable<SpotifyTrackExtended | null> =
-    this.playback$.pipe(
-      filter((data) => !!data),
-      map(({ context, track_window }) => {
-        const track = track_window.current_track;
-        if (!track) {
-          return null;
+  readonly currentTrack$: Observable<SpotifyTrackExtended | null> = this.playback$.pipe(
+    filter((data) => !!data),
+    map(({ context, track_window }) => {
+      const track = track_window.current_track;
+      if (!track) {
+        return null;
+      }
+      const { album } = track;
+      const getPlaylistUrl = (uri: string | null) => {
+        if (!uri) {
+          return '';
         }
-        const { album } = track;
-        const getPlaylistUrl = (uri: string | null) => {
-          if (!uri) {
-            return '';
-          }
-          const isPlaylist = uri.includes('playlist');
-          return isPlaylist
-            ? RouteUtil.getPlaylistRouteUrl(StringUtil.getIdFromUri(uri))
-            : '';
-        };
-        const albumId = StringUtil.getIdFromUri(album.uri);
-        const albumUrl = RouteUtil.getAlbumRouteUrl(albumId);
-        const trackExtended: SpotifyTrackExtended = {
-          ...track,
-          albumUrl,
-          playlistUrl: getPlaylistUrl(context.uri),
-          artists: track.artists.map((artist) => {
-            const artistId = StringUtil.getIdFromUri(artist.uri);
-            const artistUrl = RouteUtil.getArtistRouteUrl(artistId);
-            return {
-              ...artist,
-              artistUrl,
-            };
-          }),
-        };
-        return trackExtended;
-      })
-    );
+        const isPlaylist = uri.includes('playlist');
+        return isPlaylist ? RouteUtil.getPlaylistRouteUrl(StringUtil.getIdFromUri(uri)) : '';
+      };
+      const albumId = StringUtil.getIdFromUri(album.uri);
+      const albumUrl = RouteUtil.getAlbumRouteUrl(albumId);
+      const trackExtended: SpotifyTrackExtended = {
+        ...track,
+        albumUrl,
+        playlistUrl: getPlaylistUrl(context.uri),
+        artists: track.artists.map((artist) => {
+          const artistId = StringUtil.getIdFromUri(artist.uri);
+          const artistUrl = RouteUtil.getArtistRouteUrl(artistId);
+          return {
+            ...artist,
+            artistUrl
+          };
+        })
+      };
+      return trackExtended;
+    })
+  );
   readonly position$ = this.playback$.pipe(map((data) => data?.position));
   readonly volume$ = this.select((s) => s.volume);
   readonly isPlaying$ = this.playback$.pipe(
@@ -83,12 +72,12 @@ export class PlaybackStore extends ComponentStore<PlaybackState> {
   );
   readonly analysisInfo$ = this.select((s) => ({
     trackAnalysisId: s.trackAnalysisId,
-    isAnalysisLoading: s.isAnalysisLoading,
+    isAnalysisLoading: s.isAnalysisLoading
   }));
   readonly segments$ = this.select((s) => ({
     isPlaying: s.data ? !s.data.paused : false,
     position: s.data?.position,
-    segments: s.analysis?.segments,
+    segments: s.analysis?.segments
   })).pipe(filter((s) => !!s.segments));
 
   readonly player = () => this.get().player;
@@ -111,7 +100,7 @@ export class PlaybackStore extends ComponentStore<PlaybackState> {
         this.trackApi.getAudioAnalysis(trackId).pipe(
           map((analysis) => ({
             analysis,
-            trackId,
+            trackId
           })),
           catchError(() => {
             this.patchState({ isAnalysisLoading: false });
@@ -123,13 +112,13 @@ export class PlaybackStore extends ComponentStore<PlaybackState> {
         analysis.segments = analysis.segments.map((segment) => ({
           ...segment,
           start: segment.start * 1000,
-          duration: segment.duration * 1000,
+          duration: segment.duration * 1000
         }));
 
         this.patchState({
           analysis: analysis,
           trackAnalysisId: trackId,
-          isAnalysisLoading: false,
+          isAnalysisLoading: false
         });
       })
     )

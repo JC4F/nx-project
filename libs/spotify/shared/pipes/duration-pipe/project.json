@@ -1,7 +1,7 @@
 {
-  "name": "spotify-shared-data-access-store",
+  "name": "spotify-shared-pipes-duration-pipe",
   "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/spotify/shared/data-access/store/src",
+  "sourceRoot": "libs/spotify/shared/pipes/duration-pipe/src",
   "prefix": "lib",
   "projectType": "library",
   "tags": [],

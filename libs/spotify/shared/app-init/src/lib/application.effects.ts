@@ -1,8 +1,6 @@
-import { AuthStore } from '@angular-spotify/web/auth/data-access';
-import { SettingsFacade } from '@angular-spotify/web/settings/data-access';
-import { PlaybackService } from '@angular-spotify/web/shared/data-access/store';
 import { Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { PlaybackService } from '@jc4f-nx/spotify-shared-data-access-store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { combineLatest } from 'rxjs';
 import { filter, switchMap, tap, withLatestFrom } from 'rxjs/operators';
@@ -31,7 +29,7 @@ export class ApplicationEffects {
         })
       ),
     {
-      dispatch: false
+      dispatch: false,
     }
   );
 
@@ -39,26 +37,30 @@ export class ApplicationEffects {
     () =>
       this.actions$.pipe(
         ofType(AuthReady),
-        withLatestFrom(combineLatest([this.authStore.token$, this.settingsFacade.volume$])),
+        withLatestFrom(
+          combineLatest([this.authStore.token$, this.settingsFacade.volume$])
+        ),
         tap(([_, [token, volume]]) => {
           this.playbackService.initPlaybackSDK(token, volume);
         })
       ),
     {
-      dispatch: false
+      dispatch: false,
     }
   );
 
   sendGoogleAnalyticPageView$ = createEffect(
     () =>
       this.router.events.pipe(
-        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd
+        ),
         tap((event) => {
           this.googleAnalytics.sendPageView(event.urlAfterRedirects);
         })
       ),
     {
-      dispatch: false
+      dispatch: false,
     }
   );
 
@@ -69,7 +71,7 @@ export class ApplicationEffects {
         switchMap(() => this.promptUpdate.forceUpdate())
       ),
     {
-      dispatch: false
+      dispatch: false,
     }
   );
 }

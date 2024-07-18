@@ -1,7 +1,7 @@
-// import { SettingsFacade } from '@angular-spotify/web/settings/data-access';
+import { SettingsFacade } from '@angular-spotify/web/settings/data-access';
+import { PlayerApiService } from '@angular-spotify/web/shared/data-access/spotify-api';
 import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { PlayerApiService } from '@jc4f-nx/spotify-shared-data-access-spotify-api';
 import { Observable } from 'rxjs';
 import { PlaybackStore } from './playback.store';
 
@@ -10,9 +10,9 @@ export class PlaybackService {
   constructor(
     private playbackStore: PlaybackStore,
     private playerApi: PlayerApiService,
-    private titleService: Title
-  ) // private settingsFacade: SettingsFacade
-  {}
+    private titleService: Title,
+    private settingsFacade: SettingsFacade
+  ) {}
 
   play() {
     this.playbackStore.player()?.togglePlay();
@@ -32,9 +32,9 @@ export class PlaybackService {
 
   setVolume(volume: number): Observable<unknown> {
     this.playbackStore.patchState({
-      volume,
+      volume
     });
-    // this.settingsFacade.persistVolume(volume);
+    this.settingsFacade.persistVolume(volume);
     return this.playerApi.setVolume(Math.floor(volume * 100));
   }
 
@@ -45,7 +45,7 @@ export class PlaybackService {
       getOAuthToken: (cb) => {
         cb(token);
       },
-      volume,
+      volume
     });
 
     player.addListener('initialization_error', ({ message }) => {
@@ -57,41 +57,36 @@ export class PlaybackService {
     });
 
     player.addListener('account_error', ({ message }) => {
-      alert(
-        `You account has to have Spotify Premium for playing music ${message}`
-      );
+      alert(`You account has to have Spotify Premium for playing music ${message}`);
     });
 
     player.addListener('playback_error', ({ message }) => {
       console.error(message);
     });
 
-    player.addListener(
-      'player_state_changed',
-      async (state: Spotify.PlaybackState) => {
-        console.log(state);
-        if (!state) {
-          console.info('[Angular Spotify] No player info!');
-          return;
-        }
-        this.setAppTitle(state);
-        this.playbackStore.patchState({
-          data: state,
-          volume: await player.getVolume(),
-        });
-        const currentTrackId = state.track_window?.current_track?.id;
-        if (!state.paused && currentTrackId) {
-          this.playbackStore.loadTracksAnalytics({
-            trackId: currentTrackId,
-          });
-        }
+    player.addListener('player_state_changed', async (state: Spotify.PlaybackState) => {
+      console.log(state);
+      if (!state) {
+        console.info('[Angular Spotify] No player info!');
+        return;
       }
-    );
+      this.setAppTitle(state);
+      this.playbackStore.patchState({
+        data: state,
+        volume: await player.getVolume()
+      });
+      const currentTrackId = state.track_window?.current_track?.id;
+      if (!state.paused && currentTrackId) {
+        this.playbackStore.loadTracksAnalytics({
+          trackId: currentTrackId
+        });
+      }
+    });
 
     player.addListener('ready', ({ device_id }) => {
       console.log('[Angular Spotify] Ready with Device ID', device_id);
       this.playbackStore.patchState({
-        deviceId: device_id,
+        deviceId: device_id
       });
       this.playerApi.transferUserPlayback(device_id).subscribe();
     });
@@ -102,7 +97,7 @@ export class PlaybackService {
 
     await player.connect();
     this.playbackStore.patchState({
-      player,
+      player
     });
   }
 
@@ -112,9 +107,7 @@ export class PlaybackService {
     if (currentTrack) {
       const artistName = currentTrack.artists[0].name || '';
       this.titleService.setTitle(
-        `Angular Spotify - ${currentTrack.name} ${
-          artistName ? `- ${artistName}` : ''
-        }`
+        `Angular Spotify - ${currentTrack.name} ${artistName ? `- ${artistName}` : ''}`
       );
     }
   }

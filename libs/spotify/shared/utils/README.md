@@ -1,3 +1,3 @@
-# spotify-shared-data-access-store
+# spotify-shared-utils
 
 This library was generated with [Nx](https://nx.dev).
