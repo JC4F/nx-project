@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { AuthStore } from '@jc4f-nx/spotify-auth-data-access';
 import { PlaybackService } from '@jc4f-nx/spotify-shared-data-access-store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { combineLatest } from 'rxjs';

@@ -1,0 +1,29 @@
+<a
+  class="group/item flex flex-col rounded transition-[background-color] bg-secondary-foreground bg-opacity-70 gap-4 p-4 items-center sm:flex-row sm:items-start min-h-[450px]"
+  [routerLink]="routerUrl"
+>
+  <div
+    class="flex relative"
+    *ngrxLet="isMediaPlaying$ as isPlaying"
+  >
+    <as-media-cover [imageUrl]="imageUrl" [roundedImage]="roundedImage">
+    </as-media-cover>
+    <as-play-button
+      [class]=["absolute right-[10px] bottom-[25px] opacity-0 invisible translate-y-0 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-y-[10px]", isPlaying? 'visible opacity-100 translate-y-[10px]': '']
+      [primary]="true"
+      [large]="true"
+      [isPlaying]="isPlaying"
+      (togglePlay)="togglePlay.emit($event)"
+      asClickStopPropagation
+    >
+    </as-play-button>
+  </div>
+  <div class="z-[2]">
+    <h2 class="break-words font-bold text-white line-clamp-1">
+      {{ title }}
+    </h2>
+    <div class="break-words line-clamp-2 select-none">
+      {{ description }}
+    </div>
+  </div>
+</a>
