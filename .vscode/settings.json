@@ -5,5 +5,14 @@
     "source.fixAll.eslint": "explicit",
     "source.addMissingImports": "explicit",
     "source.organizeImports": "explicit"
-  }
+  },
+  "scss.lint.unknownAtRules": "ignore",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  // ^ pretty sure this needs to go in workspace settings
+
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "angular.enable-strict-mode-prompt": false
+  // ^ this can go in user settings, but you may as well put it in each
+  //   workspace's settings so collaborators don't need to know about it.d
 }

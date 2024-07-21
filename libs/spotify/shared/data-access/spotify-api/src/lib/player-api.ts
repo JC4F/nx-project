@@ -1,14 +1,18 @@
-import { AppConfig, APP_CONFIG } from '@angular-spotify/web/shared/app-config';
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { APP_CONFIG, AppConfig } from '@jc4f-nx/spotify-shared-app-config';
 import {
   SpotifyApiRecentPlayerTracksResponse,
-  SpotifyPlayRequestApi
-} from '@angular-spotify/web/shared/data-access/models';
+  SpotifyPlayRequestApi,
+} from '@jc4f-nx/spotify-shared-data-access-models';
+
 @Injectable({ providedIn: 'root' })
 export class PlayerApiService {
   playerUrl: string;
-  constructor(@Inject(APP_CONFIG) private appConfig: AppConfig, private http: HttpClient) {
+  constructor(
+    @Inject(APP_CONFIG) private appConfig: AppConfig,
+    private http: HttpClient
+  ) {
     this.playerUrl = `${this.appConfig.baseURL}/me/player`;
   }
 
@@ -45,24 +49,26 @@ export class PlayerApiService {
   seek(positionMs: number) {
     return this.http.put(`${this.playerUrl}/seek`, null, {
       params: {
-        position_ms: `${positionMs}`
-      }
+        position_ms: `${positionMs}`,
+      },
     });
   }
 
   setVolume(volume: number) {
     return this.http.put(`${this.playerUrl}/volume`, null, {
       params: {
-        volume_percent: `${volume}`
-      }
+        volume_percent: `${volume}`,
+      },
     });
   }
 
-  getRecentPlayedTracks(params: SpotifyApi.RecentlyPlayedParameterObject = { limit: 50 }) {
+  getRecentPlayedTracks(
+    params: SpotifyApi.RecentlyPlayedParameterObject = { limit: 50 }
+  ) {
     return this.http.get<SpotifyApiRecentPlayerTracksResponse>(
       `${this.playerUrl}/recently-played`,
       {
-        params: params as any // eslint-disable-line
+        params: params as any, // eslint-disable-line
       }
     );
   }

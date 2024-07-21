@@ -1,1 +1,1 @@
-export * from './lib/spotify-shared-work-in-progress.component';
+export * from './lib/work-in-progress.component';

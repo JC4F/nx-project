@@ -1,1 +1,1 @@
-export * from './lib/spotify-shared-ui-spinner.component';
+export * from './lib/spinner.component';

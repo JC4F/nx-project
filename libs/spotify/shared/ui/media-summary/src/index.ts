@@ -1,1 +1,1 @@
-export * from './lib/spotify-shared-ui-media-summary.component';
+export * from './lib/media-summary.component';

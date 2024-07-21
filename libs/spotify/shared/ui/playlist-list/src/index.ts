@@ -1,1 +1,1 @@
-export * from './lib/spotify-shared-ui-playlist-list.component';
+export * from './lib/playlist-list.component';

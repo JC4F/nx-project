@@ -1,1 +1,1 @@
-export * from './lib/spotify-shared-track-current-info.component';
+export * from './lib/track-current-info.component';

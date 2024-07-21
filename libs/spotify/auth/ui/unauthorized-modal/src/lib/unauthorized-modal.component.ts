@@ -1,21 +1,20 @@
-import { AuthStore } from '@angular-spotify/web/auth/data-access';
 import { Component } from '@angular/core';
-import { NzModalRef } from 'ng-zorro-antd/modal';
+import { AuthStore } from '@jc4f-nx/spotify-auth-data-access';
+import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
+import { BrnDialogRef } from '@spartan-ng/ui-dialog-brain';
 
 @Component({
   standalone: true,
   selector: 'as-anauthorized-modal',
   templateUrl: './unauthorized-modal.component.html',
-  styleUrls: ['./unauthorized-modal.component.scss'],
+  imports: [HlmButtonDirective],
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UnauthorizedModalComponent {
-  confirmModal?: NzModalRef;
-
-  constructor(private modal: NzModalRef, private store: AuthStore) {}
+  constructor(private modal: BrnDialogRef, private store: AuthStore) {}
 
   authenticate() {
     this.store.redirectToAuthorize();
-    this.modal.destroy();
+    this.modal.close();
   }
 }

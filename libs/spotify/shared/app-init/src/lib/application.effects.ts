@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import { AuthStore } from '@jc4f-nx/spotify-auth-data-access';
+import { SettingsFacade } from '@jc4f-nx/spotify-settings-data-access';
 import { PlaybackService } from '@jc4f-nx/spotify-shared-data-access-store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { combineLatest } from 'rxjs';
@@ -41,6 +43,7 @@ export class ApplicationEffects {
         withLatestFrom(
           combineLatest([this.authStore.token$, this.settingsFacade.volume$])
         ),
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         tap(([_, [token, volume]]) => {
           this.playbackService.initPlaybackSDK(token, volume);
         })

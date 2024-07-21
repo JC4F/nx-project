@@ -1,7 +1,7 @@
-import { APP_CONFIG, AppConfig } from '@angular-spotify/web/shared/app-config';
-import { SpotifyApiParams } from '@angular-spotify/web/shared/data-access/models';
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { APP_CONFIG, AppConfig } from '@jc4f-nx/spotify-shared-app-config';
+import { SpotifyApiParams } from '@jc4f-nx/spotify-shared-data-access-models';
 
 @Injectable({ providedIn: 'root' })
 export class AlbumApiService {

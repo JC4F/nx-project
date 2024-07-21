@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ClickStopPropagationDirective } from '@jc4f-nx/spotify-shared-click-stop-propagation';
 import { PlaybackStore } from '@jc4f-nx/spotify-shared-data-access-store';
+import { MediaCoverComponent } from '@jc4f-nx/spotify-shared-ui-media-cover';
+import { PlayButtonComponent } from '@jc4f-nx/spotify-shared-ui-play-button';
 import { SelectorUtil } from '@jc4f-nx/spotify-shared-utils';
-import { LetDirective, PushPipe } from '@ngrx/component';
+import { LetDirective } from '@ngrx/component';
 import { Observable, combineLatest, of } from 'rxjs';
 @Component({
   standalone: true,
@@ -12,10 +15,10 @@ import { Observable, combineLatest, of } from 'rxjs';
   imports: [
     RouterModule,
     LetDirective,
-    PushPipe,
-    MediaCoverModule,
-    PlayButtonModule,
+    CommonModule,
     ClickStopPropagationDirective,
+    MediaCoverComponent,
+    PlayButtonComponent,
   ],
 })
 export class CardComponent implements OnInit {

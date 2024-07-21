@@ -1,0 +1,27 @@
+<button
+  hlmBtn
+  [title]="isPlaying ? 'Pause' : 'Play'"
+  [ngClass]="buttonClass"
+  (click)="togglePlay.emit(isPlaying!)"
+>
+  <svg-icon
+    [ngClass]="{
+      'opacity-0 hidden group-hover/item:opacity-100 group-hover/item:block':
+        isShowVolumeIcon
+    }"
+    [key]="isPlaying ? 'pause' : 'play'"
+    [size]="svgSize"
+  >
+  </svg-icon>
+  @if (isShowVolumeIcon) {
+  <svg-icon
+    [ngClass]="{
+      'opacity-100 block group-hover/item:opacity-0 group-hover/item:hidden':
+        isShowVolumeIcon
+    }"
+    [size]="svgSize"
+    key="volume-high"
+  >
+  </svg-icon>
+  }
+</button>

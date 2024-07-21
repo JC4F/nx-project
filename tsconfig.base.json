@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@jc4f-nx/others": ["libs/shared/ui/others/src/index.ts"],
+      "@jc4f-nx/shared-view-transiton": [
+        "libs/shared/view-transition/src/index.ts"
+      ],
       "@jc4f-nx/spotify-auth-data-access": [
         "libs/spotify/auth/data-access/src/index.ts"
       ],
