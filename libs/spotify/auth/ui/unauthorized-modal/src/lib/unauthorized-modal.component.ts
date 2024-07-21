@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import { AuthStore } from '@jc4f-nx/spotify-auth-data-access';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import { BrnDialogRef } from '@spartan-ng/ui-dialog-brain';

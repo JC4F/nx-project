@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { AuthStore } from '@jc4f-nx/spotify-auth-data-access';
 import { SettingsFacade } from '@jc4f-nx/spotify-settings-data-access';
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import { PlaybackService } from '@jc4f-nx/spotify-shared-data-access-store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { combineLatest } from 'rxjs';

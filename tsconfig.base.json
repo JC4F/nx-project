@@ -10,12 +10,17 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@jc4f-nx/others": ["libs/shared/ui/others/src/index.ts"],
+      "@jc4f-nx/others": [
+        "libs/shared/ui/others/src/index.ts"
+      ],
       "@jc4f-nx/shared-view-transiton": [
         "libs/shared/view-transition/src/index.ts"
       ],
@@ -25,9 +30,23 @@
       "@jc4f-nx/spotify-auth-ui-unauthorized-modal": [
         "libs/spotify/auth/ui/unauthorized-modal/src/index.ts"
       ],
-      "@jc4f-nx/spotify-auth-util": ["libs/spotify/auth/util/src/index.ts"],
+      "@jc4f-nx/spotify-auth-util": [
+        "libs/spotify/auth/util/src/index.ts"
+      ],
       "@jc4f-nx/spotify-home-data-access": [
         "libs/spotify/home/data-access/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-home-feature": [
+        "libs/spotify/home/feature/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-home-ui-featured-playlists": [
+        "libs/spotify/home/ui/featured-playlists/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-home-ui-greeting": [
+        "libs/spotify/home/ui/greeting/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-home-ui-recent-played": [
+        "libs/spotify/home/ui/recent-played/src/index.ts"
       ],
       "@jc4f-nx/spotify-settings-data-access": [
         "libs/spotify/settings/data-access/src/index.ts"
@@ -115,8 +134,14 @@
       ],
       "@spartan-ng/ui-input-helm": [
         "libs/shared/ui/spartans/ui-input-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-icon-helm": [
+        "libs/shared/ui/spartans/ui-icon-helm/src/index.ts"
       ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
