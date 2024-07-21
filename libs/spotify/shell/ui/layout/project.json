@@ -1,0 +1,13 @@
+{
+  "name": "spotify-shell-ui-layout",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/spotify/shell/ui/layout/src",
+  "prefix": "as",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

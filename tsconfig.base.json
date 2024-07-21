@@ -10,17 +10,12 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@jc4f-nx/others": [
-        "libs/shared/ui/others/src/index.ts"
-      ],
+      "@jc4f-nx/others": ["libs/shared/ui/others/src/index.ts"],
       "@jc4f-nx/shared-view-transiton": [
         "libs/shared/view-transition/src/index.ts"
       ],
@@ -30,9 +25,7 @@
       "@jc4f-nx/spotify-auth-ui-unauthorized-modal": [
         "libs/spotify/auth/ui/unauthorized-modal/src/index.ts"
       ],
-      "@jc4f-nx/spotify-auth-util": [
-        "libs/spotify/auth/util/src/index.ts"
-      ],
+      "@jc4f-nx/spotify-auth-util": ["libs/spotify/auth/util/src/index.ts"],
       "@jc4f-nx/spotify-home-data-access": [
         "libs/spotify/home/data-access/src/index.ts"
       ],
@@ -126,22 +119,58 @@
       "@jc4f-nx/spotify-shared-work-in-progress": [
         "libs/spotify/shared/ui/work-in-progress/src/index.ts"
       ],
+      "@jc4f-nx/spotify-shell-ui-album-at-overlay": [
+        "libs/spotify/shell/ui/album-at-overlay/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shell-ui-layout": [
+        "libs/spotify/shell/ui/layout/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shell-ui-main-view": [
+        "libs/spotify/shell/ui/main-view/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shell-ui-nav-bar": [
+        "libs/spotify/shell/ui/nav-bar/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shell-ui-nav-links": [
+        "libs/spotify/shell/ui/nav-links/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shell-ui-now-playing-bar": [
+        "libs/spotify/shell/ui/now-playing-bar/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shell-ui-player-back": [
+        "libs/spotify/shell/ui/player-back/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shell-ui-player-controls": [
+        "libs/spotify/shell/ui/player-controls/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shell-ui-player-volume": [
+        "libs/spotify/shell/ui/player-volume/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shell-ui-social-share": [
+        "libs/spotify/shell/ui/social-share/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shell-ui-top-bar": [
+        "libs/spotify/shell/ui/top-bar/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shell-ui-user-dropdown": [
+        "libs/spotify/shell/ui/user-dropdown/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-shell-ui-visualization-toggle": [
+        "libs/spotify/shell/ui/visualization-toggle/src/index.ts"
+      ],
       "@spartan-ng/ui-button-helm": [
         "libs/shared/ui/spartans/ui-button-helm/src/index.ts"
       ],
       "@spartan-ng/ui-dialog-helm": [
         "libs/shared/ui/spartans/ui-dialog-helm/src/index.ts"
       ],
-      "@spartan-ng/ui-input-helm": [
-        "libs/shared/ui/spartans/ui-input-helm/src/index.ts"
-      ],
       "@spartan-ng/ui-icon-helm": [
         "libs/shared/ui/spartans/ui-icon-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-input-helm": [
+        "libs/shared/ui/spartans/ui-input-helm/src/index.ts"
       ]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
