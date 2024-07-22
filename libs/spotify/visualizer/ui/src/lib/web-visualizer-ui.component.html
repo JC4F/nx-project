@@ -1,0 +1,15 @@
+<div class="visualizer-actions-wrapper">
+  <button
+    hlmBtn
+    *ngrxLet="isVisualizerShownAsPiP$ as isShownAsPiP"
+    (click)="togglePiP()"
+    class="action-btn"
+    title="{{ isShownAsPiP ? 'Expand' : 'Shrink' }}"
+  >
+    <svg-icon [key]="isShownAsPiP ? 'expand' : 'shrink'"></svg-icon>
+  </button>
+  <button hlmBtn (click)="close()" class="action-btn" title="Close">
+    <svg-icon [key]="'times'"></svg-icon>
+  </button>
+</div>
+<div #visualizer id="visualizer" (dblclick)="toggleFullscreen()"></div>

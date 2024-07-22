@@ -4,7 +4,7 @@ import { Component, HostBinding, Input } from '@angular/core';
   selector: 'as-media-cover',
   standalone: true,
   template: '',
-  styles: './as-media-cover.component.scss',
+  styleUrls: ['./media-cover.component.scss'],
 })
 export class MediaCoverComponent {
   @Input() set imageUrl(url: string | undefined) {

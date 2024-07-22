@@ -10,17 +10,12 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@jc4f-nx/others": [
-        "libs/shared/ui/others/src/index.ts"
-      ],
+      "@jc4f-nx/others": ["libs/shared/ui/others/src/index.ts"],
       "@jc4f-nx/shared-view-transiton": [
         "libs/shared/view-transition/src/index.ts"
       ],
@@ -30,9 +25,7 @@
       "@jc4f-nx/spotify-auth-ui-unauthorized-modal": [
         "libs/spotify/auth/ui/unauthorized-modal/src/index.ts"
       ],
-      "@jc4f-nx/spotify-auth-util": [
-        "libs/spotify/auth/util/src/index.ts"
-      ],
+      "@jc4f-nx/spotify-auth-util": ["libs/spotify/auth/util/src/index.ts"],
       "@jc4f-nx/spotify-home-data-access": [
         "libs/spotify/home/data-access/src/index.ts"
       ],
@@ -171,6 +164,12 @@
       "@jc4f-nx/spotify-visualizer-data-access": [
         "libs/spotify/visualizer/data-access/src/index.ts"
       ],
+      "@jc4f-nx/spotify-visualizer-feature": [
+        "libs/spotify/visualizer/feature/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-visualizer-ui": [
+        "libs/spotify/visualizer/ui/src/index.ts"
+      ],
       "@spartan-ng/ui-button-helm": [
         "libs/shared/ui/spartans/ui-button-helm/src/index.ts"
       ],
@@ -183,22 +182,19 @@
       "@spartan-ng/ui-input-helm": [
         "libs/shared/ui/spartans/ui-input-helm/src/index.ts"
       ],
-      "@spartan-ng/ui-switch-helm": [
-        "libs/shared/ui/spartans/ui-switch-helm/src/index.ts"
-      ],
-      "@spartan-ng/ui-tooltip-helm": [
-        "libs/shared/ui/spartans/ui-tooltip-helm/src/index.ts"
-      ],
       "@spartan-ng/ui-menu-helm": [
         "libs/shared/ui/spartans/ui-menu-helm/src/index.ts"
       ],
       "@spartan-ng/ui-spinner-helm": [
         "libs/shared/ui/spartans/ui-spinner-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-switch-helm": [
+        "libs/shared/ui/spartans/ui-switch-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-tooltip-helm": [
+        "libs/shared/ui/spartans/ui-tooltip-helm/src/index.ts"
       ]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

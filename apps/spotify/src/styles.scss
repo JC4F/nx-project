@@ -1,6 +1,7 @@
 @use '../../../styles.scss';
 @use './custom/tailwind';
 @use './custom/view-transitions';
+@use 'ng-zorro-antd/slider/style/index.min.css' as slide;
 
 body {
   min-width: 600px;

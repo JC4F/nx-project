@@ -18,6 +18,7 @@ import { Store } from '@ngrx/store';
     RecentPlayedComponent,
     FeaturedPlaylistsComponent,
   ],
+
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {

@@ -2,7 +2,7 @@
   grid-area: main-view;
   width: 100%;
   transition: background 1s ease;
-  @apply flex flex-col overflow-auto bg-baseline rounded-lg;
+  @apply flex flex-col overflow-auto rounded-lg;
 }
 
 .sticky-top-scroll {

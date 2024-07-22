@@ -5,7 +5,7 @@ import {
   PlaybackStore,
 } from '@jc4f-nx/spotify-shared-data-access-store';
 import { DurationPipe } from '@jc4f-nx/spotify-shared-pipes-duration-pipe';
-import { NzSliderValue } from 'ng-zorro-antd/slider';
+import { NzSliderModule, NzSliderValue } from 'ng-zorro-antd/slider';
 import { BehaviorSubject, combineLatest, of, timer } from 'rxjs';
 import { debounceTime, map, switchMap } from 'rxjs/operators';
 @Component({
@@ -13,7 +13,7 @@ import { debounceTime, map, switchMap } from 'rxjs/operators';
   selector: 'as-player-playback',
   templateUrl: './player-playback.component.html',
   styleUrls: ['./player-playback.component.scss'],
-  imports: [CommonModule, DurationPipe],
+  imports: [CommonModule, DurationPipe, NzSliderModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlayerPlaybackComponent {

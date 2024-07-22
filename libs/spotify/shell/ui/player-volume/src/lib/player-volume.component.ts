@@ -16,7 +16,7 @@ import {
 } from '@jc4f-nx/spotify-shared-ui-icon';
 import { SvgIconComponent, provideSvgIcons } from '@ngneat/svg-icon';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { NzSliderValue } from 'ng-zorro-antd/slider';
+import { NzSliderModule, NzSliderValue } from 'ng-zorro-antd/slider';
 import { Subject } from 'rxjs';
 import { debounceTime, map, switchMap, tap } from 'rxjs/operators';
 
@@ -26,7 +26,7 @@ import { debounceTime, map, switchMap, tap } from 'rxjs/operators';
   selector: 'as-player-volume',
   templateUrl: 'player-volume.component.html',
   styleUrls: ['player-volume.component.scss'],
-  imports: [CommonModule, SvgIconComponent],
+  imports: [CommonModule, SvgIconComponent, NzSliderModule],
   providers: [
     provideSvgIcons([
       asVolumeHighIcon,
