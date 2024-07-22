@@ -1,1 +1,1 @@
-export * from './lib/spotify-shell-ui-user-dropdown.component';
+export * from './lib/user-dropdown.component';

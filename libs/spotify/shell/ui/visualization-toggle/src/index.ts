@@ -1,1 +1,1 @@
-export * from './lib/spotify-shell-ui-visualization-toggle.component';
+export * from './lib/visualization-toggle.component';

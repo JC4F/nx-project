@@ -1,0 +1,12 @@
+<hlm-tooltip *ngrxLet="isVisualizationOn$ as isOn">
+  <div hlmTooltipTrigger class="flex items-center gap-2">
+    @if (isPlaying$ | async) {
+    <svg-icon class="text-primary" [key]="'audio-animated'"></svg-icon>
+    }
+
+    <hlm-switch class="mr-2" />
+  </div>
+  <span *brnTooltipContent class="flex items-center">
+    Turn {{ isOn ? 'off' : 'on' }} the cool visualizer!
+  </span>
+</hlm-tooltip>

@@ -1,1 +1,1 @@
-export * from './lib/spotify-shell-ui-main-view.component';
+export * from './lib/main-view.component';

@@ -1,1 +1,1 @@
-export * from './lib/spotify-shell-ui-top-bar.component';
+export * from './lib/top-bar.component';

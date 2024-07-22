@@ -1,1 +1,1 @@
-export * from './lib/spotify-shell-ui-player-volume.component';
+export * from './lib/player-volume.component';

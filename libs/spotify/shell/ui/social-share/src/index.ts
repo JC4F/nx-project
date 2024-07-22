@@ -1,1 +1,1 @@
-export * from './lib/spotify-shell-ui-social-share.component';
+export * from './lib/social-share.component';

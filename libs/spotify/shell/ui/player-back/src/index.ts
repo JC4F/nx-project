@@ -1,1 +1,1 @@
-export * from './lib/spotify-shell-ui-player-back.component';
+export * from './lib/player-playback.component';

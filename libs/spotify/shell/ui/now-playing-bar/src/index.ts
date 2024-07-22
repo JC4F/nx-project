@@ -1,1 +1,1 @@
-export * from './lib/spotify-shell-ui-now-playing-bar.component';
+export * from './lib/now-playing-bar.component';
