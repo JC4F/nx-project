@@ -1,0 +1,13 @@
+{
+  "name": "spotify-shared-work-in-progress",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/spotify/shared/ui/work-in-progress/src",
+  "prefix": "as",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "spotify-auth-ui-unauthorized-modal",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/spotify/auth/ui/unauthorized-modal/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

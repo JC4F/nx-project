@@ -1,0 +1,9 @@
+{
+  "name": "spotify-shared-data-access-spotify-api",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/spotify/shared/data-access/spotify-api/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project spotify-shared-data-access-spotify-api --web",
+  "targets": {}
+}

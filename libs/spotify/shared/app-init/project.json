@@ -1,0 +1,13 @@
+{
+  "name": "spotify-shared-app-init",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/spotify/shared/app-init/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project spotify-shared-app-init --web",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

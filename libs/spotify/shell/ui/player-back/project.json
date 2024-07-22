@@ -1,0 +1,13 @@
+{
+  "name": "spotify-shell-ui-player-back",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/spotify/shell/ui/player-back/src",
+  "prefix": "as",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

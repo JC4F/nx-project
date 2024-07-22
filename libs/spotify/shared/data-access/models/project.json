@@ -1,0 +1,9 @@
+{
+  "name": "spotify-shared-data-access-models",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/spotify/shared/data-access/models/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}

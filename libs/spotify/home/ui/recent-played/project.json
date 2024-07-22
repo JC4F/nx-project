@@ -1,0 +1,13 @@
+{
+  "name": "spotify-home-ui-recent-played",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/spotify/home/ui/recent-played/src",
+  "prefix": "as",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
