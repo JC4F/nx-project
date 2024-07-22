@@ -8,7 +8,7 @@ declare module 'sketch-js' {
   }
 
   declare const SketchJS: {
-    static create: (options) => Sketch;
+    create: (options) => Sketch;
   };
   export = SketchJS;
 }

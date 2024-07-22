@@ -15,18 +15,23 @@ export const appRoutes: Route[] = [
   {
     path: '',
     component: LayoutComponent,
-    loadComponent: () =>
-      import('@jc4f-nx/spotify-home-feature').then((m) => m.HomeComponent),
-    providers: [
-      provideState({
-        name: recentFeatureTracksFeatureKey,
-        reducer: recentPlayedTracksReducer,
-      }),
-      provideState({
-        name: featuredPlaylistsFeatureKey,
-        reducer: featuredPlaylistsReducer,
-      }),
-      provideEffects([RecentPlayedTracksEffect, FeaturePlaylistsEffect]),
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('@jc4f-nx/spotify-home-feature').then((m) => m.HomeComponent),
+        providers: [
+          provideState({
+            name: recentFeatureTracksFeatureKey,
+            reducer: recentPlayedTracksReducer,
+          }),
+          provideState({
+            name: featuredPlaylistsFeatureKey,
+            reducer: featuredPlaylistsReducer,
+          }),
+          provideEffects([RecentPlayedTracksEffect, FeaturePlaylistsEffect]),
+        ],
+      },
     ],
   },
 ];

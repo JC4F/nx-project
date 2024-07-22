@@ -6,12 +6,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import {
-  asPauseIcon,
-  asPlayIcon,
-  asVolumeHighIcon,
-} from '@jc4f-nx/spotify-shared-ui-icon';
-import { SvgIconComponent, provideSvgIcons } from '@ngneat/svg-icon';
+import { SvgIconComponent } from '@ngneat/svg-icon';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 
 @Component({
@@ -19,14 +14,6 @@ import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
   standalone: true,
   templateUrl: './play-button.component.html',
   imports: [CommonModule, SvgIconComponent, HlmButtonDirective],
-  providers: [
-    provideSvgIcons([
-      asVolumeHighIcon,
-      asPauseIcon,
-      asPlayIcon,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ]) as unknown as any[],
-  ],
 })
 export class PlayButtonComponent {
   isPause: boolean | undefined;

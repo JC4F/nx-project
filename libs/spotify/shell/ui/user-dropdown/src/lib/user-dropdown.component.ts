@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AuthStore } from '@jc4f-nx/spotify-auth-data-access';
-import { asCaretDownFillIcon } from '@jc4f-nx/spotify-shared-ui-icon';
-import { SvgIconComponent, provideSvgIcons } from '@ngneat/svg-icon';
+import { SvgIconComponent } from '@ngneat/svg-icon';
 import { BrnMenuTriggerDirective } from '@spartan-ng/ui-menu-brain';
 import {
   HlmMenuComponent,
@@ -36,8 +35,6 @@ import {
     HlmMenuItemIconDirective,
     HlmMenuGroupComponent,
   ],
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  providers: [provideSvgIcons([asCaretDownFillIcon]) as unknown as any[]],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserDropdownComponent {

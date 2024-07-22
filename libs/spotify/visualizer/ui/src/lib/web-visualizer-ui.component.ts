@@ -10,17 +10,13 @@ import {
 } from '@angular/core';
 import { PlaybackStore } from '@jc4f-nx/spotify-shared-data-access-store';
 import {
-  asExpandIcon,
-  asShrinkIcon,
-  asTimesIcon,
-} from '@jc4f-nx/spotify-shared-ui-icon';
-import {
   AudioAnalyser,
   VisualizerStore,
   initVisualizer,
 } from '@jc4f-nx/spotify-visualizer-data-access';
-import { SvgIconComponent, provideSvgIcons } from '@ngneat/svg-icon';
+import { SvgIconComponent } from '@ngneat/svg-icon';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { LetDirective } from '@ngrx/component';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import { mean } from 'lodash-es';
 import { timer } from 'rxjs';
@@ -35,15 +31,7 @@ const INTERVAL = 100;
   selector: 'as-web-visualizer-ui',
   templateUrl: './web-visualizer-ui.component.html',
   styleUrls: ['./web-visualizer-ui.component.scss'],
-  imports: [CommonModule, HlmButtonDirective, SvgIconComponent],
-  providers: [
-    provideSvgIcons([
-      asExpandIcon,
-      asShrinkIcon,
-      asTimesIcon,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ]) as unknown as any[],
-  ],
+  imports: [CommonModule, HlmButtonDirective, SvgIconComponent, LetDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WebVisualizerUiComponent implements OnInit, OnDestroy {

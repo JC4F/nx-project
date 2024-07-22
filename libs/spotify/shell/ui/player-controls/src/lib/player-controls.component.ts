@@ -4,12 +4,8 @@ import {
   PlaybackService,
   PlaybackStore,
 } from '@jc4f-nx/spotify-shared-data-access-store';
-import {
-  asStepBackwardIcon,
-  asStepForwardIcon,
-} from '@jc4f-nx/spotify-shared-ui-icon';
 import { PlayButtonComponent } from '@jc4f-nx/spotify-shared-ui-play-button';
-import { SvgIconComponent, provideSvgIcons } from '@ngneat/svg-icon';
+import { SvgIconComponent } from '@ngneat/svg-icon';
 import { startWith } from 'rxjs/operators';
 @Component({
   standalone: true,
@@ -17,13 +13,6 @@ import { startWith } from 'rxjs/operators';
   templateUrl: './player-controls.component.html',
   styleUrls: ['./player-controls.component.scss'],
   imports: [AsyncPipe, SvgIconComponent, PlayButtonComponent],
-  providers: [
-    provideSvgIcons([
-      asStepBackwardIcon,
-      asStepForwardIcon,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ]) as unknown as any[],
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlayerControlsComponent {

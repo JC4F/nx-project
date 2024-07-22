@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PlaybackStore } from '@jc4f-nx/spotify-shared-data-access-store';
-import { asAudioAnimatedIcon } from '@jc4f-nx/spotify-shared-ui-icon';
 import { VisualizerStore } from '@jc4f-nx/spotify-visualizer-data-access';
-import { SvgIconComponent, provideSvgIcons } from '@ngneat/svg-icon';
+import { SvgIconComponent } from '@ngneat/svg-icon';
+import { LetDirective } from '@ngrx/component';
 import { HlmSwitchComponent } from '@spartan-ng/ui-switch-helm';
 import { BrnTooltipContentDirective } from '@spartan-ng/ui-tooltip-brain';
 import {
@@ -23,9 +23,8 @@ import {
     HlmTooltipComponent,
     HlmTooltipTriggerDirective,
     BrnTooltipContentDirective,
+    LetDirective,
   ],
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  providers: [provideSvgIcons([asAudioAnimatedIcon]) as unknown as any[]],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VisualizationToggleComponent {

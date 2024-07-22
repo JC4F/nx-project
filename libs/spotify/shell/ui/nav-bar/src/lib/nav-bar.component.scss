@@ -6,7 +6,7 @@
   overflow-x: auto;
   min-width: 200px;
 
-  @apply flex flex-col pt-4 bg-baseline rounded-lg;
+  @apply w-[280px] flex flex-col pt-4 rounded-lg;
 }
 
 .nav-link-container {
@@ -15,7 +15,7 @@
     height: 40px;
 
     &.active {
-      @apply text-white bg-highlight;
+      @apply text-white;
       font-weight: 600;
     }
   }

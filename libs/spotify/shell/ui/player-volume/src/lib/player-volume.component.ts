@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {
   VolumeHighIcon,
   VolumeMediumIcon,
@@ -9,12 +10,7 @@ import {
   PlaybackService,
   PlaybackStore,
 } from '@jc4f-nx/spotify-shared-data-access-store';
-import {
-  asVolumeHighIcon,
-  asVolumeMediumIcon,
-  asVolumeMuteIcon,
-} from '@jc4f-nx/spotify-shared-ui-icon';
-import { SvgIconComponent, provideSvgIcons } from '@ngneat/svg-icon';
+import { SvgIconComponent } from '@ngneat/svg-icon';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { NzSliderModule, NzSliderValue } from 'ng-zorro-antd/slider';
 import { Subject } from 'rxjs';
@@ -26,15 +22,7 @@ import { debounceTime, map, switchMap, tap } from 'rxjs/operators';
   selector: 'as-player-volume',
   templateUrl: 'player-volume.component.html',
   styleUrls: ['player-volume.component.scss'],
-  imports: [CommonModule, SvgIconComponent, NzSliderModule],
-  providers: [
-    provideSvgIcons([
-      asVolumeHighIcon,
-      asVolumeMediumIcon,
-      asVolumeMuteIcon,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ]) as unknown as any[],
-  ],
+  imports: [CommonModule, SvgIconComponent, NzSliderModule, FormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlayerVolumeComponent {

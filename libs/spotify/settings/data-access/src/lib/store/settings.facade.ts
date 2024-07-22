@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { SettingsState } from './settings.reducer';
 import * as SettingsActions from './settings.actions';
+import { SettingsState } from './settings.reducer';
 import * as SettingsSelectors from './settings.selectors';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class SettingsFacade {
   public settings$ = this.store.select(SettingsSelectors.getSettings);
   public volume$ = this.store.select(SettingsSelectors.getSettingsVolume);

@@ -8,7 +8,7 @@
 .sticky-top-scroll {
   position: sticky;
   top: 0;
-  @apply h-topBar;
+  @apply h-[60px];
 }
 
 .main-view {

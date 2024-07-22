@@ -11,6 +11,7 @@ import { PlaybackStore } from '@jc4f-nx/spotify-shared-data-access-store';
 import { MediaCoverComponent } from '@jc4f-nx/spotify-shared-ui-media-cover';
 import { PlayButtonComponent } from '@jc4f-nx/spotify-shared-ui-play-button';
 import { RouteUtil, SelectorUtil } from '@jc4f-nx/spotify-shared-utils';
+import { LetDirective } from '@ngrx/component';
 import { Observable, combineLatest, of } from 'rxjs';
 
 @Component({
@@ -23,6 +24,7 @@ import { Observable, combineLatest, of } from 'rxjs';
     RouterModule,
     MediaCoverComponent,
     PlayButtonComponent,
+    LetDirective,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

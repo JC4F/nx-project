@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {
   PlaybackService,
   PlaybackStore,
@@ -13,7 +14,7 @@ import { debounceTime, map, switchMap } from 'rxjs/operators';
   selector: 'as-player-playback',
   templateUrl: './player-playback.component.html',
   styleUrls: ['./player-playback.component.scss'],
-  imports: [CommonModule, DurationPipe, NzSliderModule],
+  imports: [CommonModule, DurationPipe, NzSliderModule, FormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlayerPlaybackComponent {
