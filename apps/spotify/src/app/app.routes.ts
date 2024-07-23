@@ -1,4 +1,10 @@
-import { Route } from '@angular/router';
+import { inject } from '@angular/core';
+import { ActivatedRouteSnapshot, Route, Router } from '@angular/router';
+import {
+  AlbumsEffect,
+  albumsFeatureKey,
+  albumsReducer,
+} from '@jc4f-nx/spotify-album-data-access';
 import {
   CategoriesEffect,
   CategoryPlaylistsEffect,
@@ -71,6 +77,102 @@ export const appRoutes: Route[] = [
           },
         ],
       },
+      {
+        path: 'search',
+        loadComponent: () =>
+          import('@jc4f-nx/spotify-search-feature').then(
+            (m) => m.SearchComponent
+          ),
+      },
+      {
+        path: 'collection',
+        children: [
+          {
+            path: 'playlists',
+            loadComponent: () =>
+              import('@jc4f-nx/spotify-playlist-feature-list').then(
+                (m) => m.PlaylistsComponent
+              ),
+          },
+          {
+            path: 'tracks',
+            loadComponent: () =>
+              import('@jc4f-nx/spotify-tracks-feature').then(
+                (m) => m.TracksComponent
+              ),
+          },
+        ],
+      },
+      {
+        path: `playlist/:${RouterUtil.Configuration.PlaylistId}`,
+        loadComponent: () =>
+          import('@jc4f-nx/spotify-playlist-feature-detail').then(
+            (m) => m.PlaylistComponent
+          ),
+      },
+      {
+        path: 'albums',
+        providers: [
+          provideState({
+            name: albumsFeatureKey,
+            reducer: albumsReducer,
+          }),
+          provideEffects([AlbumsEffect]),
+        ],
+        children: [
+          {
+            path: '',
+            loadComponent: () =>
+              import('@jc4f-nx/spotify-album-feature-list').then(
+                (m) => m.AlbumsComponent
+              ),
+          },
+          {
+            path: `:${RouterUtil.Configuration.AlbumId}`,
+            loadComponent: () =>
+              import('@jc4f-nx/spotify-album-feature-detail').then(
+                (m) => m.AlbumComponent
+              ),
+          },
+        ],
+      },
+      {
+        path: `artist/:${RouterUtil.Configuration.ArtistId}`,
+        loadComponent: () =>
+          import('@jc4f-nx/spotify-artist-feature').then(
+            (m) => m.ArtistComponent
+          ),
+      },
+      {
+        path: 'container-queries',
+        children: [
+          {
+            path: '',
+            loadComponent: () =>
+              import('@jc4f-nx/spotify-container-queries').then(
+                (m) => m.ContainerQueriesComponent
+              ),
+          },
+          {
+            path: `:${RouterUtil.Configuration.AlbumId}`,
+            canActivate: [containerQueriesDetailGuard],
+          },
+        ],
+      },
+      {
+        path: RouterUtil.Configuration.Visualizer,
+        loadComponent: () =>
+          import('@jc4f-nx/spotify-visualizer-feature').then(
+            (m) => m.VisualizerComponent
+          ),
+      },
     ],
   },
 ];
+
+export function containerQueriesDetailGuard(next: ActivatedRouteSnapshot) {
+  const router = inject(Router);
+  const albumId = next.paramMap.get(RouterUtil.Configuration.AlbumId);
+  router.navigate([RouterUtil.Configuration.Albums, albumId]);
+  return true;
+}
