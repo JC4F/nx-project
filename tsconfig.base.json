@@ -26,6 +26,18 @@
         "libs/spotify/auth/ui/unauthorized-modal/src/index.ts"
       ],
       "@jc4f-nx/spotify-auth-util": ["libs/spotify/auth/util/src/index.ts"],
+      "@jc4f-nx/spotify-browse-data-access": [
+        "libs/spotify/browse/data-access/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-browse-feature-categories": [
+        "libs/spotify/browse/feature/categories/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-browse-feature-category": [
+        "libs/spotify/browse/feature/category/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-browse-ui-category-cover": [
+        "libs/spotify/browse/ui/category-cover/src/index.ts"
+      ],
       "@jc4f-nx/spotify-home-data-access": [
         "libs/spotify/home/data-access/src/index.ts"
       ],
