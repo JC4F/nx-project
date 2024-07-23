@@ -13,6 +13,7 @@ import { TrackMainInfoComponent } from '@jc4f-nx/spotify-shared-track-main-info'
 import { MediaOrderComponent } from '@jc4f-nx/spotify-shared-ui-media-order';
 import { MediaTableRowComponent } from '@jc4f-nx/spotify-shared-ui-media-table';
 import { RouteUtil, SelectorUtil } from '@jc4f-nx/spotify-shared-utils';
+import { LetDirective } from '@ngrx/component';
 import { Observable, combineLatest, of } from 'rxjs';
 
 @Component({
@@ -27,6 +28,7 @@ import { Observable, combineLatest, of } from 'rxjs';
     MediaOrderComponent,
     TrackMainInfoComponent,
     DurationPipe,
+    LetDirective,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

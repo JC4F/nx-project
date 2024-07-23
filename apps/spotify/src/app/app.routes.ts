@@ -156,6 +156,7 @@ export const appRoutes: Route[] = [
           {
             path: `:${RouterUtil.Configuration.AlbumId}`,
             canActivate: [containerQueriesDetailGuard],
+            children: [],
           },
         ],
       },
