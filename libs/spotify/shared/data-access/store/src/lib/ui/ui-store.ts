@@ -4,7 +4,7 @@ import { UnauthorizedModalComponent } from '@jc4f-nx/spotify-auth-ui-unauthorize
 import { NavItem } from '@jc4f-nx/spotify-shared-data-access-models';
 import { ComponentStore } from '@ngrx/component-store';
 import { HlmDialogService } from '@spartan-ng/ui-dialog-helm';
-import { filter, switchMapTo, tap } from 'rxjs/operators';
+import { filter, switchMap, tap } from 'rxjs/operators';
 
 interface UIState {
   navItems: NavItem[];
@@ -54,7 +54,7 @@ export class UIStore extends ComponentStore<UIState> {
 
   readonly showUnauthorizedModal = this.effect((params$) =>
     params$.pipe(
-      switchMapTo(this.isShowUnauthorizedModal$),
+      switchMap(() => this.isShowUnauthorizedModal$),
       filter((s) => !s),
       tap(() => {
         this.patchState({

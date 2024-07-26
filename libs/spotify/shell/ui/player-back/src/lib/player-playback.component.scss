@@ -4,5 +4,5 @@
 
 .timer-duration {
   transition: all 0.2s;
-  @apply text-xs text-white text-opacity-60;
+  @apply text-xs text-foreground text-opacity-60;
 }

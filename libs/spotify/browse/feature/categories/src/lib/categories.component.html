@@ -1,0 +1,11 @@
+<div class="mb-6 px-8 pt-4">
+  @if (categories$ | async; as categories) {
+  <div class="grid grid-cols-card-autofill gap-6">
+    @for (category of categories.items; track category) {
+    <as-category-cover [category]="category"> </as-category-cover>
+    }
+  </div>
+  } @if (isLoading$ | async) {
+  <as-spinner></as-spinner>
+  }
+</div>

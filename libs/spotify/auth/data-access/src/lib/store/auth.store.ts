@@ -10,7 +10,7 @@ import { SpotifyApiService } from '@jc4f-nx/spotify-shared-data-access-spotify-a
 import { ComponentStore } from '@ngrx/component-store';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { filter, map, switchMapTo, tap } from 'rxjs/operators';
+import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { SpotifyAuthorize } from '../models/spotify-authorize';
 
 export interface AuthState extends SpotifyApi.CurrentUsersProfileResponse {
@@ -56,7 +56,7 @@ export class AuthStore extends ComponentStore<AuthState> {
   );
 
   readonly init = this.effect((params$) =>
-    params$.pipe(switchMapTo(this.initAuth()))
+    params$.pipe(switchMap(() => this.initAuth()))
   );
 
   redirectToAuthorize() {

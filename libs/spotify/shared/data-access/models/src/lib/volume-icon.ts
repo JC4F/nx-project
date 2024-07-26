@@ -1,8 +1,10 @@
+import { SvgIcons } from '@ngneat/svg-icon';
+
 export class VolumeIcon {
   constructor(
     public volume: number,
-    public icon: string,
-    public title: string,
+    public icon: SvgIcons,
+    public title: string
   ) {}
 }
 

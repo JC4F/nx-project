@@ -15,8 +15,7 @@
     @apply ml-2;
     border: none;
     border-radius: 50%;
-    @apply bg-black bg-opacity-70 w-8 h-8;
-    color: #fff;
+    @apply bg-black bg-opacity-70 w-8 h-8 text-foreground;
     display: inline-flex;
     justify-content: center;
     align-items: center;

@@ -7,6 +7,7 @@ import {
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { RouteUtil } from './route-util';
+
 export class SelectorUtil {
   static getMediaPlayingState(
     obs$: Observable<[string | undefined, Spotify.PlaybackState]>

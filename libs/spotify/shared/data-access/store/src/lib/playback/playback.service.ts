@@ -69,7 +69,7 @@ export class PlaybackService {
     player.addListener(
       'player_state_changed',
       async (state: Spotify.PlaybackState) => {
-        console.log(state);
+        console.log('player_state_changed: ', state);
         if (!state) {
           console.info('[Angular Spotify] No player info!');
           return;

@@ -1,0 +1,13 @@
+{
+  "name": "spotify-playlist-feature-detail",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/spotify/playlist/feature/detail/src",
+  "prefix": "as",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

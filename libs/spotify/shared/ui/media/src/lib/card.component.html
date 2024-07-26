@@ -1,5 +1,5 @@
 <a
-  class="group/item flex flex-col rounded transition-[background-color] bg-secondary-foreground bg-opacity-70 gap-4 p-4 items-center sm:flex-row sm:items-start min-h-[450px]"
+  class="group/item flex flex-col rounded transition-[background-color] bg-transparent hover:bg-secondary bg-opacity-70 gap-0 p-4 min-h-[48px]"
   [routerLink]="routerUrl"
 >
   <div class="flex relative" *ngrxLet="isMediaPlaying$ as isPlaying">
@@ -7,7 +7,7 @@
     </as-media-cover>
     <as-play-button
       [ngClass]="[
-        'absolute right-[10px] bottom-[25px] opacity-0 invisible translate-y-0 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-y-[10px]',
+        'absolute right-[10px] bottom-[25px] opacity-0 invisible transition-all translate-y-0 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-y-[10px]',
         isPlaying ? 'visible opacity-100 translate-y-[10px]' : ''
       ]"
       [primary]="true"
@@ -18,11 +18,11 @@
     >
     </as-play-button>
   </div>
-  <div class="z-[2]">
-    <h2 class="break-words font-bold text-white line-clamp-1">
+  <div class="z-[2] mt-2">
+    <h2 class="break-words text-foreground line-clamp-1">
       {{ title }}
     </h2>
-    <div class="break-words line-clamp-2 select-none">
+    <div class="break-words text-sm font-light line-clamp-2 select-none">
       {{ description }}
     </div>
   </div>

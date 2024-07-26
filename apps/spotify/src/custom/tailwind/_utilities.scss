@@ -1,6 +1,6 @@
 @layer utilities {
   .link-subtle {
-    @apply text-white text-opacity-70 hover:text-white focus-visible:text-white;
+    @apply text-foreground text-opacity-70 hover:text-foreground focus-visible:text-foreground;
   }
 
   .no-select {

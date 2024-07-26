@@ -6,7 +6,11 @@ import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
   standalone: true,
   selector: 'as-social-share',
   templateUrl: './social-share.component.html',
-  styleUrls: ['./social-share.component.scss'],
+  styles: `
+    :host {
+      flex: 1;
+    }
+  `,
   imports: [SvgIconComponent, HlmButtonDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

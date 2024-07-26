@@ -2,6 +2,8 @@
   grid-area: now-playing-bar;
   width: 100%;
   z-index: 4;
+
+  @apply bg-background;
 }
 
 .now-playing-bar-container {

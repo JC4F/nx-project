@@ -1,23 +1,20 @@
 <div
-  [ngClass]="[
-    'relative flex min-h-8 w-full overflow-hidden',
-    containerClassName
-  ]"
+  [ngClass]="['relative flex min-h-8 w-full', containerClassName]"
   [style.height.px]="inputContainerHeight"
   [style.border-radius]="rounded ? '500px' : '8px'"
 >
   @if (icon) {
-  <div
-    class="absolute h-full left-0 top-0 bottom-0 flex items-center justify-center"
-    [style.width.px]="iconContainerWidth"
+  <svg-icon
+    [key]="icon"
+    [size]="iconSize"
+    class="absolute text-foreground top-1/2 left-3 translate-y-[-50%]"
   >
-    <svg-icon [key]="icon" [size]="iconSize" color="black"> </svg-icon>
-  </div>
+  </svg-icon>
   }
 
   <input
     hlmInput
-    class="flex-1 border-none"
+    class="flex-1 h-full"
     #input
     [formControl]="control"
     [placeholder]="placeholder"
@@ -26,12 +23,12 @@
   />
 
   @if (showClearButton) {
-  <div
-    class="absolute h-full right-0 left-auto top-0 bottom-0 flex items-center justify-center cursor-pointer"
-    [style.width.px]="iconContainerWidth"
+  <svg-icon
+    [key]="'times'"
+    [size]="iconSize"
+    class="absolute text-foreground top-1/2 right-3 translate-y-[-50%] cursor-pointer"
+    (click)="clear()"
   >
-    <svg-icon [key]="'times'" [size]="iconSize" color="black" (click)="clear()">
-    </svg-icon>
-  </div>
+  </svg-icon>
   }
 </div>

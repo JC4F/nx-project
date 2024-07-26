@@ -1,6 +1,6 @@
 @if (featuredPlaylists$ | async; as data) {
-<h2 class="mt-8 mb-4 text-heading">{{ data.message }}</h2>
-<div class="common-grid">
+<h2 class="mt-8 mb-4 text-xl text-foreground">{{ data.message }}</h2>
+<div class="grid grid-cols-card-autofill">
   @for (playlist of data.playlists.items; track playlist) {
   <as-card
     [title]="playlist.name"

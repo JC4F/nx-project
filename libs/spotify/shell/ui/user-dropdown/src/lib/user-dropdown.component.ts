@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { AuthStore } from '@jc4f-nx/spotify-auth-data-access';
 import { SvgIconComponent } from '@ngneat/svg-icon';
+import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import { BrnMenuTriggerDirective } from '@spartan-ng/ui-menu-brain';
 import {
   HlmMenuComponent,
@@ -22,6 +24,8 @@ import {
   styleUrls: ['./user-dropdown.component.scss'],
   imports: [
     CommonModule,
+    HlmButtonDirective,
+    RouterModule,
     SvgIconComponent,
     BrnMenuTriggerDirective,
 

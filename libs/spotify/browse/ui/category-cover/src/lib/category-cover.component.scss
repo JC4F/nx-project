@@ -1,0 +1,18 @@
+.category-cover-container {
+  border-radius: 6px;
+  display: flex;
+  position: relative;
+  &:hover {
+    .category-name {
+      @apply underline;
+    }
+  }
+}
+
+.category-name {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  @apply text-foreground text-base;
+}

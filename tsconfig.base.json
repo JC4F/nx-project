@@ -5,6 +5,7 @@
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -19,6 +20,30 @@
       "@jc4f-nx/shared-view-transiton": [
         "libs/shared/view-transition/src/index.ts"
       ],
+      "@jc4f-nx/spotify-album-data-access": [
+        "libs/spotify/album/data-access/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-album-feature-detail": [
+        "libs/spotify/album/feature/detail/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-album-feature-list": [
+        "libs/spotify/album/feature/list/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-album-ui-album-track": [
+        "libs/spotify/album/ui/album-track/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-artist-data-access": [
+        "libs/spotify/artist/data-access/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-artist-feature": [
+        "libs/spotify/artist/feature/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-artist-ui-artist-top-track": [
+        "libs/spotify/artist/ui/artist-top-track/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-artist-ui-artist-top-tracks": [
+        "libs/spotify/artist/ui/artist-top-tracks/src/index.ts"
+      ],
       "@jc4f-nx/spotify-auth-data-access": [
         "libs/spotify/auth/data-access/src/index.ts"
       ],
@@ -26,6 +51,21 @@
         "libs/spotify/auth/ui/unauthorized-modal/src/index.ts"
       ],
       "@jc4f-nx/spotify-auth-util": ["libs/spotify/auth/util/src/index.ts"],
+      "@jc4f-nx/spotify-browse-data-access": [
+        "libs/spotify/browse/data-access/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-browse-feature-categories": [
+        "libs/spotify/browse/feature/categories/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-browse-feature-category": [
+        "libs/spotify/browse/feature/category/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-browse-ui-category-cover": [
+        "libs/spotify/browse/ui/category-cover/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-container-queries": [
+        "libs/spotify/container-queries/src/index.ts"
+      ],
       "@jc4f-nx/spotify-home-data-access": [
         "libs/spotify/home/data-access/src/index.ts"
       ],
@@ -43,6 +83,21 @@
       ],
       "@jc4f-nx/spotify-playlist-data-access": [
         "libs/spotify/playlist/data-access/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-playlist-feature-detail": [
+        "libs/spotify/playlist/feature/detail/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-playlist-feature-list": [
+        "libs/spotify/playlist/feature/list/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-playlist-ui-playlist-track": [
+        "libs/spotify/playlist/ui/playlist-track/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-search-data-access": [
+        "libs/spotify/search/data-access/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-search-feature": [
+        "libs/spotify/search/feature/src/index.ts"
       ],
       "@jc4f-nx/spotify-settings-data-access": [
         "libs/spotify/settings/data-access/src/index.ts"
@@ -160,6 +215,12 @@
       ],
       "@jc4f-nx/spotify-shell-ui-visualization-toggle": [
         "libs/spotify/shell/ui/visualization-toggle/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-tracks-data-access": [
+        "libs/spotify/tracks/data-access/src/index.ts"
+      ],
+      "@jc4f-nx/spotify-tracks-feature": [
+        "libs/spotify/tracks/feature/src/index.ts"
       ],
       "@jc4f-nx/spotify-visualizer-data-access": [
         "libs/spotify/visualizer/data-access/src/index.ts"
