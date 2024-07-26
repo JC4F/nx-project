@@ -22,7 +22,7 @@
   <!-- Tracks -->
   @if (data?.tracks?.items?.length) {
   <div>
-    <h2 class="mt-8 mb-4 text-xl text-background">Songs</h2>
+    <h2 class="mt-8 mb-4 text-xl text-foreground">Songs</h2>
     <as-media-table-header>
       <div class="album-tracks-grid">
         <div>#</div>
@@ -45,7 +45,7 @@
   <!-- Artists -->
   @if (data?.artists?.items?.length) {
   <div>
-    <h2 class="mt-8 mb-4 text-xl text-background">Artists</h2>
+    <h2 class="mt-8 mb-4 text-xl text-foreground">Artists</h2>
     <div class="grid grid-cols-card-autofill">
       @for (item of data?.artists?.items; track item) {
       <as-card
@@ -65,7 +65,7 @@
   <!-- Albums -->
   @if (data?.albums?.items?.length) {
   <div>
-    <h2 class="mt-8 mb-4 text-xl text-background">Albums</h2>
+    <h2 class="mt-8 mb-4 text-xl text-foreground">Albums</h2>
     <div class="grid grid-cols-card-autofill">
       @for (item of data?.albums?.items; track item) {
       <as-card
@@ -84,7 +84,7 @@
   <!-- Playlists -->
   @if (data?.playlists?.items?.length) {
   <div>
-    <h2 class="mt-8 mb-4 text-xl text-background">Playlists</h2>
+    <h2 class="mt-8 mb-4 text-xl text-foreground">Playlists</h2>
     <div class="grid grid-cols-card-autofill">
       @for (item of data?.playlists?.items; track item) {
       <as-card

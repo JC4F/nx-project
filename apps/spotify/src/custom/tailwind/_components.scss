@@ -41,6 +41,7 @@
     display: grid;
     grid-template-columns: 24px 6fr minmax(120px, 1fr);
     gap: 16px;
+    @apply text-foreground;
   }
 
   .artist-top-tracks-grid {
@@ -50,6 +51,8 @@
   }
 
   .track-row {
+    @apply text-foreground;
+
     &:hover {
       .track-order {
         display: none;
@@ -83,9 +86,8 @@
       margin: 0 auto;
       text-align: center;
       display: inline-block;
-      color: white;
       z-index: 2;
-      @apply bg-primary text-xl;
+      @apply bg-primary text-xl text-foreground;
     }
   }
 }
