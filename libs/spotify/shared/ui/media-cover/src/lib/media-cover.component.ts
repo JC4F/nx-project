@@ -11,7 +11,7 @@ export class MediaCoverComponent {
     this.backgroundUrl = url && `url(${url})`;
   }
   @Input() set roundedImage(isRounded: boolean | undefined) {
-    this.borderRadius = isRounded ? '50%' : 'initial';
+    this.borderRadius = isRounded ? '50%' : '6px';
   }
 
   @HostBinding('style.background-image') backgroundUrl!: string | undefined;

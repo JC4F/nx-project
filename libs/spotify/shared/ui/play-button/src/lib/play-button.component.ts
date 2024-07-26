@@ -28,12 +28,15 @@ export class PlayButtonComponent {
     if (this.flatIcon) {
       return ['flex'];
     }
-    const baseClass = 'flex hover:scale-105 active:scale-[0.98] group/item';
+    const baseClass =
+      'flex !rounded-full hover:scale-105 active:scale-[0.98] group/item';
     const sizeClass = this.large ? 'large' : '';
     return [
       baseClass,
       sizeClass,
-      this.primary ? 'text-white bg-dark' : 'text-black bg-white',
+      this.primary
+        ? '!text-black !bg-[#1ed760] !h-12 !w-12 !shadow'
+        : '!text-black !bg-foreground',
     ];
   }
 

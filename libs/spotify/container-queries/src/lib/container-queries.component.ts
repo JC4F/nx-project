@@ -24,8 +24,8 @@ import * as mockAlbums from './albums.mock.json';
     `,
   ],
   template: `
-    <div class="content-spacing">
-      <h1 class="text-3xl text-white">Hello Melbourne 🇦🇺</h1>
+    <div class="px-8 pt-4">
+      <h1 class="text-xl text-foreground">Hello Melbourne 🇦🇺</h1>
       <div class="flex pb-6">
         <a
           nz-button
@@ -46,13 +46,13 @@ import * as mockAlbums from './albums.mock.json';
             *ngTemplateOutlet="cards; context: { albums: featureAlbumsThree }"
           ></ng-container>
         </section>
-        <section class="common-grid gap-6">
+        <section class="grid grid-cols-card-autofill gap-6">
           <ng-container
             *ngTemplateOutlet="cards; context: { albums: albums }"
           ></ng-container>
         </section>
       </div>
-      <h2 class="text-3xl text-white my-8">Card Playground 🇦🇺</h2>
+      <h2 class="text-xl text-foreground my-8">Card Playground 🇦🇺</h2>
       <div class="grid place-items-center min-h-[600px]">
         <div class="min-w-[180px] resize-x overflow-auto">
           <ng-container

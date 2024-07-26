@@ -1,26 +1,28 @@
-<a routerLink="/" class="flex px-6 py-0 mb-4 text-white">
+<a routerLink="/" class="flex px-6 py-0 mb-4 text-foreground">
   <ng-container [ngTemplateOutlet]="logoTmpl"></ng-container>
 </a>
 
 <ul class="m-0">
   @for (item of navItems$ | async; track item) {
-    <li class="nav-link-container">
-      <a
-        #link="routerLinkActive"
-        [routerLink]="item.path"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: item.exact! }"
-        class="flex gap-4 items-center px-6 nav-link link-subtle transition-all"
-        >
-        <svg-icon
-          class="transition-all"
-          [size]="'lg'"
-          [key]="link.isActive && item.iconSelected ? item.iconSelected : item.icon!"
-          title="duration"
-        ></svg-icon>
-        {{ item.label }}
-      </a>
-    </li>
+  <li class="nav-link-container">
+    <a
+      #link="routerLinkActive"
+      [routerLink]="item.path"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: item.exact! }"
+      class="flex gap-4 items-center px-6 nav-link link-subtle transition-all"
+    >
+      <svg-icon
+        class="transition-all"
+        [size]="'lg'"
+        [key]="
+          link.isActive && item.iconSelected ? item.iconSelected : item.icon!
+        "
+        title="duration"
+      ></svg-icon>
+      {{ item.label }}
+    </a>
+  </li>
   }
 </ul>
 

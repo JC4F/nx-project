@@ -1,4 +1,4 @@
-<div class="mb-6 content-spacing">
+<div class="mb-6 px-8 pt-4">
   <!-- Search Input -->
   <div class="search-input-container">
     <as-input
@@ -22,7 +22,7 @@
   <!-- Tracks -->
   @if (data?.tracks?.items?.length) {
   <div>
-    <h2 class="mt-8 mb-4 text-heading">Songs</h2>
+    <h2 class="mt-8 mb-4 text-xl text-background">Songs</h2>
     <as-media-table-header>
       <div class="album-tracks-grid">
         <div>#</div>
@@ -45,8 +45,8 @@
   <!-- Artists -->
   @if (data?.artists?.items?.length) {
   <div>
-    <h2 class="mt-8 mb-4 text-heading">Artists</h2>
-    <div class="common-grid">
+    <h2 class="mt-8 mb-4 text-xl text-background">Artists</h2>
+    <div class="grid grid-cols-card-autofill">
       @for (item of data?.artists?.items; track item) {
       <as-card
         [title]="item.name"
@@ -65,8 +65,8 @@
   <!-- Albums -->
   @if (data?.albums?.items?.length) {
   <div>
-    <h2 class="mt-8 mb-4 text-heading">Albums</h2>
-    <div class="common-grid">
+    <h2 class="mt-8 mb-4 text-xl text-background">Albums</h2>
+    <div class="grid grid-cols-card-autofill">
       @for (item of data?.albums?.items; track item) {
       <as-card
         [title]="item.name"
@@ -84,8 +84,8 @@
   <!-- Playlists -->
   @if (data?.playlists?.items?.length) {
   <div>
-    <h2 class="mt-8 mb-4 text-heading">Playlists</h2>
-    <div class="common-grid">
+    <h2 class="mt-8 mb-4 text-xl text-background">Playlists</h2>
+    <div class="grid grid-cols-card-autofill">
       @for (item of data?.playlists?.items; track item) {
       <as-card
         [title]="item.name"

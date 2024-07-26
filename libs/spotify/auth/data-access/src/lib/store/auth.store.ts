@@ -72,7 +72,6 @@ export class AuthStore extends ComponentStore<AuthState> {
     }
 
     return this.route.fragment.pipe(
-      tap((params) => console.log('fragment: ' + params)),
       filter((fragment) => !!fragment),
       map((fragment) => new URLSearchParams(fragment as string)),
       map((params) => ({

@@ -8,12 +8,12 @@
 }
 
 .media-title {
-  @apply font-black text-5xl text-white;
+  @apply font-black text-5xl text-foreground;
   line-height: initial;
 }
 
 .media-info {
-  @apply text-white text-opacity-70;
+  @apply text-foreground text-opacity-70;
 
   &:not(:first-child):before {
     content: '•';

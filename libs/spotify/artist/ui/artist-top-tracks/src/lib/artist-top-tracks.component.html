@@ -1,4 +1,4 @@
-<h2 class="text-heading mt-2 mb-4">Popular</h2>
+<h2 class="text-xl text-background mt-2 mb-4">Popular</h2>
 @if (vm$ | async; as vm) { @for (track of vm.data?.tracks; track track; let idx
 = $index) {
 <as-artist-top-track [order]="idx + 1" [track]="track"></as-artist-top-track>

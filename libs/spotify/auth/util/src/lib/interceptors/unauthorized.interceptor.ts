@@ -21,7 +21,7 @@ export class UnauthorizedInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<Record<string, string>>> {
     return next.handle(req).pipe(
       catchError((err: HttpResponse<Record<string, string>>) => {
-        console.log(err);
+        console.log('interceptor error', err);
 
         if (err.status === 401) {
           this.uiStore.showUnauthorizedModal();

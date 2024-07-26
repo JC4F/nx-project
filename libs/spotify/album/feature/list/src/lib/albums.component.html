@@ -1,6 +1,6 @@
-<div class="content-spacing">
+<div class="px-8 pt-4">
   @if (albums$ | async; as albums) {
-  <div class="common-grid">
+  <div class="grid grid-cols-card-autofill">
     @for (item of albums.items; track item) {
     <as-card
       [ngClass]="viewTransitionName(item)"

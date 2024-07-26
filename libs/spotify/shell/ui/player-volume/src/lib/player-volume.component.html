@@ -1,11 +1,11 @@
 @if (volumeIcon$ | async; as volumeIcon) {
-  <svg-icon
-    class="control-button hover:text-white"
-    [key]="volumeIcon.icon"
-    [title]="volumeIcon.title"
-    (click)="toggleMute()"
-    >
-  </svg-icon>
+<svg-icon
+  class="control-button hover:text-foreground"
+  [key]="volumeIcon.icon"
+  [title]="volumeIcon.title"
+  (click)="toggleMute()"
+>
+</svg-icon>
 }
 <nz-slider
   class="flex-1 mx-2 volume-slider"
@@ -15,5 +15,5 @@
   [nzStep]="0.01"
   [nzTooltipVisible]="'never'"
   (ngModelChange)="changeVolume($event)"
-  >
+>
 </nz-slider>
